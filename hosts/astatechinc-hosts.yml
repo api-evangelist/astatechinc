@@ -1,0 +1,51 @@
+generated: '2026-09-26'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 3
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - other
+  - website
+hosts:
+- host: api.astatechinc.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: astatechinc.com
+  role: api
+  relation: own
+- host: astatechinc.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: astatechinc.com
+  role: other
+  relation: own
+- host: www.astatechinc.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  - Support
+  - TermsOfService
+  - PrivacyPolicy
+  serves:
+  - docs
+  registrable_domain: astatechinc.com
+  role: website
+  relation: own
